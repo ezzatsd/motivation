@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Liste des Conversations</title>
+</head>
+<body>
+    <h1>Liste des Conversations</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Message</th>
+                <th>Date</th>
+                <th>Citation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="conversation : ${conversations}">
+                <td th:text="${conversation.id}"></td>
+                <td th:text="${conversation.username}"></td>
+                <td th:text="${conversation.message}"></td>
+                <td th:text="${#dates.format(conversation.date, 'dd/MM/yyyy HH:mm')}"></td>
+                <td th:text="${conversation.citation}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Conversation Motivante</title>
+
+</head>
+<body>
+    <h1>Conversation Motivante</h1>
+    <form action="/sendMessage" method="post">
+        <label for="username">Nom :</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" required></textarea>
+        <br>
+        <button type="submit">Envoyer</button>
+    </form>
+    <div th:if="${quote}" class="response-container">
+        <h2> Citation :</h2>
+        <p th:text="${quote}"></p>
+    </div>
+    <div>
+        <a href="/conversations" th:text="'Voir toutes les conversations'">Voir toutes les conversations</a>
+    </div>
+</div>
+
+</body>
+</html>
